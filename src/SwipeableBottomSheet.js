@@ -57,7 +57,8 @@ class SwipeableBottomSheet extends Component {
 			shadowTip,
 			overlay,
 			swipeableViewsProps,
-			scrollTopAtClose
+			scrollTopAtClose,
+			onOverlayClicked,
 		} = this.props;
 
 		const hiddenWhenClosed = overflowHeight === 0;
@@ -142,7 +143,7 @@ class SwipeableBottomSheet extends Component {
 					onHeightChange={this.onHeightChange}
 				/>
 				{overlay &&
-					<div style={styles.overlay} onClick={() => this.onChangeIndex(0)}/>
+					<div style={styles.overlay} onClick={() => onOverlayClicked}/>
 				}
 				<SwipeableViews
 					index={index}
@@ -202,8 +203,9 @@ SwipeableBottomSheet.defaultProps = {
 	overlay: true,
 	scrollTopAtClose: true,
 	shadowTip: true,
-  	swipeableViewsProps: {},
-  	topShadow: true
+  swipeableViewsProps: {},
+	topShadow: true,
+	onOverlayClicked : () => {}
 };
 
 export default SwipeableBottomSheet;
