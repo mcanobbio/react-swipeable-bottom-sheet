@@ -4046,13 +4046,6 @@ var SwipeableBottomSheet = (function (_Component) {
 			}
 		}
 	}, {
-		key: 'onOverlayClicked',
-		value: function onOverlayClicked() {
-			var overlayClicked = this.props.overlayClicked;
-
-			overlayClicked();
-		}
-	}, {
 		key: 'render',
 		value: function render() {
 			var _this = this;
@@ -4067,6 +4060,7 @@ var SwipeableBottomSheet = (function (_Component) {
 			var overlay = _props2.overlay;
 			var swipeableViewsProps = _props2.swipeableViewsProps;
 			var scrollTopAtClose = _props2.scrollTopAtClose;
+			var overlayClicked = _props2.overlayClicked;
 
 			var hiddenWhenClosed = overflowHeight === 0;
 			var isControlled = open !== undefined;
@@ -4141,7 +4135,9 @@ var SwipeableBottomSheet = (function (_Component) {
 					height: this.state.height,
 					onHeightChange: this.onHeightChange
 				}),
-				overlay && _react2['default'].createElement('div', { style: styles.overlay, onClick: this.onOverlayClicked }),
+				overlay && _react2['default'].createElement('div', { style: styles.overlay, onClick: function () {
+						return overlayClicked();
+					} }),
 				_react2['default'].createElement(
 					_reactSwipeableViews2['default'],
 					_extends({
