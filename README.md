@@ -49,8 +49,8 @@ The bottom sheet's height (when open) scales automatically with its content. If 
 | marginTop | number | 0 | The top margin applied to the top of the sheet when open. Use this prop to prevent navbar overflow. |
 | shadowTip | bool | true | If `true`, a box shadow is displayed at sheet bottom when closed. This is used to show that content is hidden below. |
 | topShadow | bool | true | If `true`, a box shadow is displayed at sheet top border. |
-| overlay | bool | true | If `true`, an overlay is displayed behind sheet when open. A click on the overlay closes the sheet. |
-| overlayClicked | func | () => {} | Callback when overlay is clicked. |
+| overlay | bool | true | If `true`, an overlay is displayed behind sheet when open. A click on the overlay closes the sheet if controlled mode is disabled. |
+| overlayClicked | func | () => {} | If controlled mode is enabled execute a callback when overlay is clicked. |
 | scrollTopAtClose | bool | true | If `true`, the content is scrolled to the top when sheet closes. |
 | swipeableViewsProps | object | `{}` | Props passed to SwipeableViews component (see [documentation](https://github.com/oliviertassinari/react-swipeable-views#api)). |
 | style | object | `{}` | Style applied on the root (non-swiped) component. |
